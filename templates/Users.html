@@ -16,8 +16,9 @@
 
     <p>Rating:</p>
         {% for rating in ratings %}
-            <div>Movie: {{ rating.item_id }}</div>
+            <div>Movie: {{ rating.item_id.movie_title }}</div> <a href="/movies/{{ rating.item_id }}/">Movie Page</a>
             <div>Rating: {{ rating.rating }}</div>
+            <p></p>
         {% endfor %}
 </body>
 </html>

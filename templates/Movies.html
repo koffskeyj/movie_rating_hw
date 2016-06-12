@@ -9,7 +9,17 @@
     <p>Movie:</p>
         {% for movie in movies %}
             <div>{{ movie.movie_title}}  :  {{movie.release_date }}</div>
-        {%  endfor %}
+        {% endfor %}
+
+    <p>Average Rating:</p>
+            <div>{{ average }}</div>
+    <p></p>
+        {% for rating in ratings %}
+            <div>Rater: {{ rating.user_id }} </div> <a href="/raters/{{ rating.user_id }}/">User Page</a>
+            <div>Rating: {{ rating.rating }}</div>
+           <p></p>
+        {% endfor %}
+
 
 </body>
 </html>

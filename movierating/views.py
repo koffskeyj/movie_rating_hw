@@ -1,24 +1,27 @@
 from django.shortcuts import render
 from movierating.models import Rating, Rater, Movie
+from django.db.models import Avg
+from django.db.models import Count
 
 
 def movie_index(request, movie_id):
     Movie_dict = {
-        "movies": list(Movie.objects.filter(movie_title__contains=movie_id)),
-        "ratings": list(Rating.objects.filter(item_id__con=movie_id))
+        "movies": list(Movie.objects.filter(id=movie_id)),
+        "ratings": list(Rating.objects.filter(item_id=movie_id)),
+        "average": Rating.objects.filter(item_id=movie_id).aggregate(Avg('rating'))
     }
 
     return render(request, "Movies.html", Movie_dict)
 
 
-def rating_index(request):
+def top20_rating_index(request):
+
     Rating_dict = {
-        "ratings": list(Rating.objects.all()),
-        "movies": list(Movie.objects.all()),
-        "raters": list(Rater.objects.all())
+        "average": list(Rating.objects.values_list('item_id').annotate(Avg('rating')))
     }
 
     return render(request, "Rating.html", Rating_dict)
+
 
 def rater_index(request, rater_id):
     Rater_dict = {

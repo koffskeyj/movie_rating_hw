@@ -5,8 +5,9 @@
     <title>Ratings</title>
 </head>
 <body>
-    <p>{% for rating in ratings %}</p>
-        <h1>{{ rating }}</h1>
-        {% endfor %}
+    {% for averages in average %}
+        <div>{{ average }}</div>
+    {% endfor %}
+
 </body>
 </html>

@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^movies/(?P<movie_id>\w+)/$', views.movie_index),
     url(r'^raters/(?P<rater_id>\w+)/$', views.rater_index),
-    url(r'^ratings/$', views.rating_index)
+    #url(r'^top20ratings/(?P<rating_id>\w+)/$', views.top20_rating_index)
+    url(r'^top20ratings/$', views.top20_rating_index)
 ]

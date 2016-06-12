@@ -39,7 +39,7 @@ class Movie(models.Model):
     Western = models.IntegerField()
 
     def __str__(self):
-        return self.movie_title
+        return str(self.id)
 
 
 class Rating(models.Model):
