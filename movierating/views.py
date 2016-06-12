@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from movierating.models import Rating, Rater, Movie
 from django.db.models import Avg
-from django.db.models import Count
+from django.db.models import Max
 
 
 def movie_index(request, movie_id):
@@ -17,7 +17,8 @@ def movie_index(request, movie_id):
 def top20_rating_index(request):
 
     Rating_dict = {
-        "average": list(Rating.objects.values_list('item_id').annotate(Avg('rating')))
+        "average_all": list(Rating.objects.values_list('item_id').annotate(Avg('rating')))
+
     }
 
     return render(request, "Rating.html", Rating_dict)
