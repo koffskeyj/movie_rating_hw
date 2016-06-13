@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <p>Rater:</p>
+    <h1>Rater:</h1>
         {% for rater in raters %}
             <div>Age: {{ rater.age }}</div>
             <div>Gender: {{ rater.gender }}</div>
@@ -14,9 +14,9 @@
             <div>Zipcode: {{ rater.zipcode }}</div>
         {% endfor %}
 
-    <p>Rating:</p>
+    <h1>Rating:</h1>
         {% for rating in ratings %}
-            <div>Movie: {{ rating.item_id.movie_title }}</div> <a href="/movies/{{ rating.item_id }}/">Movie Page</a>
+            <span>Movie: </span> <a href="/movies/{{ rating.item_id }}/">{{ rating.item_id.movie_title }}</a>
             <div>Rating: {{ rating.rating }}</div>
             <p></p>
         {% endfor %}

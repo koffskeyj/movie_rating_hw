@@ -6,16 +6,16 @@
 </head>
 
 <body>
-    <p>Movie:</p>
+    <h1>Movie:</h1>
         {% for movie in movies %}
-            <div>{{ movie.movie_title}}  :  {{movie.release_date }}</div>
+            <h3>{{ movie.movie_title}}  :  {{movie.release_date }}</h3>
         {% endfor %}
 
-    <p>Average Rating:</p>
-            <div>{{ average }}</div>
+    <h1>Average Rating:</h1>
+            <h3>{{ average.avg_rating }}</h3>
     <p></p>
         {% for rating in ratings %}
-            <div>Rater: {{ rating.user_id }} </div> <a href="/raters/{{ rating.user_id }}/">User Page</a>
+            <span>Rater:  </span> <a href="/raters/{{ rating.user_id }}/">{{ rating.user_id }}</a>
             <div>Rating: {{ rating.rating }}</div>
            <p></p>
         {% endfor %}

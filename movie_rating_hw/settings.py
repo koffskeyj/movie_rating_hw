@@ -56,7 +56,7 @@ ROOT_URLCONF = 'movie_rating_hw.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates']
+        'DIRS': ['movierating/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
